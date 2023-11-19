@@ -44,10 +44,11 @@ for (let item of array2) {
 }
 //4.
 let array3 = [1, 2, 3, 4, 5];
+
+let sum = 0;
+
 for (let item of array3) {
-  if (item) {
-  }
-  console.log(item);
+  sum += item;
 }
 //5.
 let array4 = [1, 2, 3, 4, 5];
@@ -89,16 +90,14 @@ let array = [2, 3, 5, 10, 25, 24, 11, 100, 6, 7, 10];
 if (array % 2 == 0) {
   console.log("array");
 }
- //10.
- let users = [
-  {username: 'giorgi', status: false},
-  {username: 'levani', status: false},
-  {username: 'anna', status: true}
-]
-for (let item of users){
-  if(item.status==true){
+//10.
+let users = [
+  { username: "giorgi", status: false },
+  { username: "levani", status: false },
+  { username: "anna", status: true },
+];
+for (let item of users) {
+  if (item.status == true) {
     console.log(item);
   }
 }
-
-
