@@ -22,8 +22,83 @@ switch (name2) {
     console.log("fals");
 }
 
-//-----------------------------------------------------------------------------------------------------------------------------------------
-1;
+//--------------------------------------------------------------------task2---------------------------------------------------------------
+//1.
 for (let i = 5; i < 101; i++) {
   console.log(i);
 }
+//2.
+let array1 = [1, 2, 4, -1, -3, 8, 7, 0, -5, 18, 12];
+for (let item of array1) {
+  if (item > 0 && item < 10) {
+    console.log(item);
+  }
+}
+//3.
+let array2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+for (let item of array2) {
+  if (item == 5) {
+    break;
+  }
+  console.log(item);
+}
+//4.
+let array3 = [1, 2, 3, 4, 5];
+for (let item of array3) {
+  if (item) {
+  }
+  console.log(item);
+}
+//5.
+let array4 = [1, 2, 3, 4, 5];
+
+//6.
+let array5 = [1, 2, 3, 7, 6, 9];
+for (let item of array5) {
+  if (item == 7) {
+    continue;
+  }
+  console.log(item);
+}
+//7.
+let user = {
+  firstname: "giorgi",
+  lastname: "smith",
+  age: 25,
+  studentstatus: "active",
+};
+console.log(user.studentstatus);
+//8.
+let user1 = {
+  name: "giorgi",
+  age: 20,
+  studentstatus: "active",
+};
+if (user1.age < "18" && studentstatus == "active ") {
+  console.log("heloo");
+} else if (user1.name == "ლევან") {
+  console.log(" hello levani");
+} else if (user1.studentstatus == "active" || age < 25) {
+  console.log("hello world");
+} else {
+  console.log(error);
+}
+//9.
+let array = [2, 3, 5, 10, 25, 24, 11, 100, 6, 7, 10];
+
+if (array % 2 == 0) {
+  console.log("array");
+}
+ //10.
+ let users = [
+  {username: 'giorgi', status: false},
+  {username: 'levani', status: false},
+  {username: 'anna', status: true}
+]
+for (let item of users){
+  if(item.status==true){
+    console.log(item);
+  }
+}
+
+
