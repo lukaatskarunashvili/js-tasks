@@ -42,7 +42,7 @@ for (let item of array2) {
   }
   console.log(item);
 }
-//4.
+//4,5
 let array3 = [1, 2, 3, 4, 5];
 
 let sum = 0;
@@ -50,8 +50,11 @@ let sum = 0;
 for (let item of array3) {
   sum += item;
 }
-//5.
-let array4 = [1, 2, 3, 4, 5];
+console.log(sum);
+
+let result2 = sum / array3.length;
+
+console.log(result2);
 
 //6.
 let array5 = [1, 2, 3, 7, 6, 9];
