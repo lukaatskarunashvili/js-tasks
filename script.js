@@ -1,3 +1,4 @@
+"use strict";
 // let number = 100;
 // if (number < 50) {
 //   console.log("ნაკლებია50ზ");
