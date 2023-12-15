@@ -175,119 +175,163 @@
 
 // --------------------------------------------task4-----------------------------------------------------
 
-// 1.
-let array1 = ["hello1", 14, 24, "hello2"];
+// // 1.
+// let array1 = ["hello1", 14, 24, "hello2"];
 
-let filterarray = array1.filter((num) => num > 0);
-console.log(filterarray);
+// let filterarray = array1.filter((num) => num > 0);
+// console.log(filterarray);
 
-//2.
-let array2 = [14, 150, "css", null, "javascript", 25];
-let newarray = array2.map((item) => {
-  if (typeof item == "number") {
-    return item * item;
-  } else if (typeof item == "string") {
-    return item.toUpperCase();
-  }
-  return item;
+// //2.
+// let array2 = [14, 150, "css", null, "javascript", 25];
+// let newarray = array2.map((item) => {
+//   if (typeof item == "number") {
+//     return item * item;
+//   } else if (typeof item == "string") {
+//     return item.toUpperCase();
+//   }
+//   return item;
+// });
+// console.log(newarray);
+
+// //3.
+// let info = "Good day";
+
+// let sliceinfo = info.slice(5, 8);
+// console.log(sliceinfo);
+
+// //4.
+// function fanc2(word) {
+//   return word;
+// }
+
+// let newfanc = fanc2("good morning");
+// console.log(newfanc.length);
+// //5.
+// let useranswer = prompt("საქართველოს დედაქალაქი");
+// let trueanswer = "თბილისი";
+// let lowanswer = useranswer.toLowerCase();
+// if (lowanswer == trueanswer) {
+//   console.log("სწორია");
+// } else {
+//   console.log("არასწორია");
+// }
+
+// //6.
+// let link = "https://google.com";
+
+// function trueLink(myString) {
+//   let trueeLink2 = myString.indexOf("https://");
+
+//   if (trueeLink2 == -1) {
+//     console.log("არ მოიცავს");
+//   } else {
+//     console.log("მოიცავს");
+//   }
+// }
+
+// trueLink(link);
+
+// //7.
+// let fruits = ["apple", "mango", "avocado", "kiwi"];
+// fruits.splice(-2, 1, "strawberry");
+// console.log(fruits);
+// //8.
+// let array3 = [5, 25, 89, 120, 36];
+// array3.push(" javascript", " python");
+// array3.unshift("html", "css");
+// array3.shift();
+// array3.pop();
+// console.log(array3);
+// console.log(array3.length);
+// //9.
+// let fruits2 = ["ფორთოხალი", "ბანანი", "კივი"];
+// fruits2.push("ვაშლი", "ანანსი");
+// fruits2.unshift("საზამთრო");
+// fruits2.splice(2, 0, "მანგო");
+// fruits2.shift();
+// fruits2.pop();
+
+// console.log(fruits2.length);
+// console.log(fruits2);
+// //10.
+// let array = [1, 2, 3, 4, 5];
+// array.splice(2, 0, "a", "b", "c");
+// console.log(array);
+// //11.
+// let arr = [1, 2, 3, 4, 5];
+// let sum = 0;
+// arr.forEach(function (item) {
+//   sum += item;
+// });
+// console.log(sum);
+
+// //12.
+// let array4 = [12, 25, 3, 6, 8, 14, 7, 23];
+// let newarray4 = array4.map((num) => num / 3);
+// console.log(newarray4);
+// //13.
+// let languages = ["html", "css", "javascript", "python", "php"];
+// let newarraylanguage = languages.filter((leng) => leng.length > 3);
+// console.log(newarraylanguage);
+
+// //14.
+// let words = ["Madrid", "Rome", "Milan", "Berlin"];
+
+// let newArrayWords = words.filter((el) => {
+//   if (el.includes("m") || el.includes("M")) {
+//     return true;
+//   }
+//   return false;
+// });
+// //15.
+// let array5 = [-1, -2, -3, 4];
+// array5.some((el) => el > 0); //--------
+// console.log(array5);
+// //16.
+// let array6 = [15, 100, 25, 10, 36];
+// array6.splice(-2, 1);
+// console.log(array6);
+//  ------------------------------------------------task5-------------------------------------------------
+
+//1
+let num = "12345";
+let array3New = num.split("");
+let sum2 = 0;
+array3New.forEach(function (item) {
+  sum2 += item;
 });
-console.log(newarray);
+console.log(sum2);
+//2
 
-//3.
-let info = "Good day";
+/* <div class=“wraper”> 
+ <img src=“რაღაცა სურათის მისამართი დაამატეთ” alt=“image”>
+<h2 class=“title”> image title </h2>
+</div>
+h2 ჯს დან დაუმატეთ წითელი ფონტის ფერი და ფროტის ზომა 30px */
+let newdivelement = document.createElement("div");
+let newimgelement = document.createElement("img");
+let newHelement = document.createElement("h2");
+newdivelement.classList.add("wraper");
+newimgelement.setAttribute(
+  "src",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgcZ_QaAYqL2b6FfEE1st9Pkr2D5fwTqzzg&usqp=CAU"
+);
 
-let sliceinfo = info.slice(5, 8);
-console.log(sliceinfo);
+newimgelement.setAttribute("alt", "image");
+newHelement.classList.add("title");
+newHelement.textContent = "image title";
+newHelement.style.color = "red";
+newHelement.style.fontSize = "30px";
+document.getElementById("div-wraper").appendChild(newdivelement);
+document.querySelector(".wraper").appendChild(newimgelement);
+document.querySelector(".wraper").appendChild(newHelement);
+//3
+//  შექმენით სამი დივი htmlში, მიანიჭეთ ერთიდაიგივე კლასის სახელი და ყველა დივში დაამატეთ ჯს-დან შემდეგი კოდი:
+// <p class=“text”> hello </p>
+document.querySelectorAll(".div-element").forEach((item) => {
+  let newPelement = document.createElement("P");
+  newPelement.classList.add("text");
+  newPelement.textContent = "hello";
 
-//4.
-function fanc2(word) {
-  return word;
-}
-
-let newfanc = fanc2("good morning");
-console.log(newfanc.length);
-//5.
-let useranswer = prompt("საქართველოს დედაქალაქი");
-let trueanswer = "თბილისი";
-let lowanswer = useranswer.toLowerCase();
-if (lowanswer == trueanswer) {
-  console.log("სწორია");
-} else {
-  console.log("არასწორია");
-}
-
-//6.
-let link = "https://google.com";
-
-function trueLink(myString) {
-  let trueeLink2 = myString.indexOf("https://");
-
-  if (trueeLink2 == -1) {
-    console.log("არ მოიცავს");
-  } else {
-    console.log("მოიცავს");
-  }
-}
-
-trueLink(link);
-
-//7.
-let fruits = ["apple", "mango", "avocado", "kiwi"];
-fruits.splice(-2, 1, "strawberry");
-console.log(fruits);
-//8.
-let array3 = [5, 25, 89, 120, 36];
-array3.push(" javascript", " python");
-array3.unshift("html", "css");
-array3.shift();
-array3.pop();
-console.log(array3);
-console.log(array3.length);
-//9.
-let fruits2 = ["ფორთოხალი", "ბანანი", "კივი"];
-fruits2.push("ვაშლი", "ანანსი");
-fruits2.unshift("საზამთრო");
-fruits2.splice(2, 0, "მანგო");
-fruits2.shift();
-fruits2.pop();
-
-console.log(fruits2.length);
-console.log(fruits2);
-//10.
-let array = [1, 2, 3, 4, 5];
-array.splice(2, 0, "a", "b", "c");
-console.log(array);
-//11.
-let arr = [1, 2, 3, 4, 5];
-let sum = 0;
-arr.forEach(function (item) {
-  sum += item;
+  item.appendChild(newPelement);
 });
-console.log(sum);
-
-//12.
-let array4 = [12, 25, 3, 6, 8, 14, 7, 23];
-let newarray4 = array4.map((num) => num / 3);
-console.log(newarray4);
-//13.
-let languages = ["html", "css", "javascript", "python", "php"];
-let newarraylanguage = languages.filter((leng) => leng.length > 3);
-console.log(newarraylanguage);
-
-//14.
-let words = ["Madrid", "Rome", "Milan", "Berlin"];
-
-let newArrayWords = words.filter((el) => {
-  if (el.includes("m") || el.includes("M")) {
-    return true;
-  }
-  return false;
-});
-//15.
-let array5 = [-1, -2, -3, 4];
-array5.some((el) => el > 0); //--------
-console.log(array5);
-//16.
-let array6 = [15, 100, 25, 10, 36];
-array6.splice(-2, 1);
-console.log(array6);
