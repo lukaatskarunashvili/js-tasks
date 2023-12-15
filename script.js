@@ -109,66 +109,185 @@
 //-----------------------------------------------------------------------------------------------------------------------------------
 //task3
 
-//1.
-function fun1(...numbers) {
-  let numberfun1 = 0;
-  for (let item of numbers) {
-    numberfun1 += item;
-  }
-  return numberfun1;
-}
-let numberesult = fun1(10, 50, 6, 7, 8, 11, 6, 3, 9);
-console.log(numberesult);
+// //1.
+// function fun1(...numbers) {
+//   let numberfun1 = 0;
+//   for (let item of numbers) {
+//     numberfun1 += item;
+//   }
+//   return numberfun1;
+// }
+// let numberesult = fun1(10, 50, 6, 7, 8, 11, 6, 3, 9);
+// console.log(numberesult);
+
+// //2.
+// let user = {
+//   firstname: "giorgi",
+//   lastname: "saakadze",
+//   age: 32,
+//   isloggedin: true,
+// };
+
+// function printName(user) {
+//   if (user.isloggedin) {
+//     return `${user.firstname} ${user.lastname}`;
+//   }
+//   return false;
+// }
+
+// let resultPirntName = printName(user);
+// console.log(resultPirntName);
+
+// //3.
+
+// function getMax(...numbersMax) {
+//   let maxValue = 0;
+//   for (let i of numbersMax) {
+//     // console.log(i);
+//     if (i > maxValue) {
+//       maxValue = i;
+//     }
+//   }
+
+//   return maxValue;
+// }
+
+// let resultGetMax = getMax(5, 105, 250, 35);
+// console.log(resultGetMax);
+
+// //4./
+// function test(item) {
+//   if (item % 2 == 0) {
+//     return "even";
+//   }
+//   return "odd";
+// }
+
+// let returnTesstResult = test();
+// console.log(returnTesstResult);
+
+// //5.
+// let array = [1, 2, 3, 4, 5];
+
+// for (let i = array.length - 1; i >= 0; i--) {
+//   console.log(array[i]);
+// }
+
+// --------------------------------------------task4-----------------------------------------------------
+
+// 1.
+let array1 = ["hello1", 14, 24, "hello2"];
+
+let filterarray = array1.filter((num) => num > 0);
+console.log(filterarray);
 
 //2.
-let user = {
-  firstname: "giorgi",
-  lastname: "saakadze",
-  age: 32,
-  isloggedin: true,
-};
-
-function printName(user) {
-  if (user.isloggedin) {
-    return `${user.firstname} ${user.lastname}`;
+let array2 = [14, 150, "css", null, "javascript", 25];
+let newarray = array2.map((item) => {
+  if (typeof item == "number") {
+    return item * item;
+  } else if (typeof item == "string") {
+    return item.toUpperCase();
   }
-  return false;
-}
-
-let resultPirntName = printName(user);
-console.log(resultPirntName);
+  return item;
+});
+console.log(newarray);
 
 //3.
+let info = "Good day";
 
-function getMax(...numbersMax) {
-  let maxValue = 0;
-  for (let i of numbersMax) {
-    // console.log(i);
-    if (i > maxValue) {
-      maxValue = i;
-    }
-  }
+let sliceinfo = info.slice(5, 8);
+console.log(sliceinfo);
 
-  return maxValue;
+//4.
+function fanc2(word) {
+  return word;
 }
 
-let resultGetMax = getMax(5, 105, 250, 35);
-console.log(resultGetMax);
-
-//4./
-function test(item) {
-  if (item % 2 == 0) {
-    return "even";
-  }
-  return "odd";
-}
-
-let returnTesstResult = test();
-console.log(returnTesstResult);
-
+let newfanc = fanc2("good morning");
+console.log(newfanc.length);
 //5.
-let array = [1, 2, 3, 4, 5];
-
-for (let i = array.length - 1; i >= 0; i--) {
-  console.log(array[i]);
+let useranswer = prompt("საქართველოს დედაქალაქი");
+let trueanswer = "თბილისი";
+let lowanswer = useranswer.toLowerCase();
+if (lowanswer == trueanswer) {
+  console.log("სწორია");
+} else {
+  console.log("არასწორია");
 }
+
+//6.
+let link = "https://google.com";
+
+function trueLink(myString) {
+  let trueeLink2 = myString.indexOf("https://");
+
+  if (trueeLink2 == -1) {
+    console.log("არ მოიცავს");
+  } else {
+    console.log("მოიცავს");
+  }
+}
+
+trueLink(link);
+
+//7.
+let fruits = ["apple", "mango", "avocado", "kiwi"];
+fruits.splice(-2, 1, "strawberry");
+console.log(fruits);
+//8.
+let array3 = [5, 25, 89, 120, 36];
+array3.push(" javascript", " python");
+array3.unshift("html", "css");
+array3.shift();
+array3.pop();
+console.log(array3);
+console.log(array3.length);
+//9.
+let fruits2 = ["ფორთოხალი", "ბანანი", "კივი"];
+fruits2.push("ვაშლი", "ანანსი");
+fruits2.unshift("საზამთრო");
+fruits2.splice(2, 0, "მანგო");
+fruits2.shift();
+fruits2.pop();
+
+console.log(fruits2.length);
+console.log(fruits2);
+//10.
+let array = [1, 2, 3, 4, 5];
+array.splice(2, 0, "a", "b", "c");
+console.log(array);
+//11.
+let arr = [1, 2, 3, 4, 5];
+let sum = 0;
+arr.forEach(function (item) {
+  sum += item;
+});
+console.log(sum);
+
+//12.
+let array4 = [12, 25, 3, 6, 8, 14, 7, 23];
+let newarray4 = array4.map((num) => num / 3);
+console.log(newarray4);
+//13.
+let languages = ["html", "css", "javascript", "python", "php"];
+let newarraylanguage = languages.filter((leng) => leng.length > 3);
+console.log(newarraylanguage);
+
+//14.
+let words = ["Madrid", "Rome", "Milan", "Berlin"];
+
+let newArrayWords = words.filter((el) => {
+  if (el.includes("m") || el.includes("M")) {
+    return true;
+  }
+  return false;
+});
+//15.
+let array5 = [-1, -2, -3, 4];
+array5.some((el) => el > 0); //--------
+console.log(array5);
+//16.
+let array6 = [15, 100, 25, 10, 36];
+array6.splice(-2, 1);
+console.log(array6);
