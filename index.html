@@ -3,14 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>js tasks</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <div class="header-wraper" id="wraper">
+        <a
+          class="logo-btn"
+          id="logo"
+          href="https://www.google.com/"
+          target="_blank"
+          >logo</a
+        >
+        <nav>
+          <ul class="ul-list" id="list-item">
+            <li class="list list1"><a href="">Home</a></li>
+            <li class="list list2"><a href="">News</a></li>
+            <li class="list list3"><a href="">About</a></li>
+            <li class="list list4"><a href="">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="burger" id="burger-bar">
+          <div class="circle circle1"></div>
+          <div class="circle circle2"></div>
+          <div class="circle circle3"></div>
+        </div>
+      </div>
+    </header>
     <div id="div-wraper"></div>
     <div class="div-element"></div>
     <div class="div-element"></div>
     <div class="div-element"></div>
+    <section>
+      <div>
+        <h2>To Do List</h2>
+        <form action="" id="formElement">
+          <input type="text" id="textInfo" name="inputName" />
+          <button id="add-btn-input">Add Item</button>
+        </form>
+        <ul id="ul-items"></ul>
+
+        <button id="clearAll">Clear All Items</button>
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>

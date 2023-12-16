@@ -303,7 +303,7 @@ array3New.forEach(function (item) {
 console.log(sum2);
 //2
 
-/* <div class=“wraper”> 
+/* <div class=“wraper”>
  <img src=“რაღაცა სურათის მისამართი დაამატეთ” alt=“image”>
 <h2 class=“title”> image title </h2>
 </div>
@@ -334,4 +334,52 @@ document.querySelectorAll(".div-element").forEach((item) => {
   newPelement.textContent = "hello";
 
   item.appendChild(newPelement);
+});
+// ------------------------------------------------------------task6--------------------------------------------------------------------------------
+//1.
+let inputToDo = document.getElementById("textInfo");
+let addBtn = document.getElementById("add-btn-input");
+let ulElement = document.getElementById("ul-items");
+let clearBtn = document.getElementById("clearAll");
+let formElement = document.getElementById("formElement");
+
+formElement.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let valueInput = inputToDo.value;
+  if (valueInput == "") {
+    return;
+  }
+
+  let li = document.createElement("li");
+  li.textContent = valueInput;
+
+  let iconDelete = document.createElement("i");
+  iconDelete.classList.add("fa-solid", "fa-trash");
+
+  iconDelete.addEventListener("click", function () {
+    li.remove();
+  });
+
+  li.appendChild(iconDelete);
+  ulElement.appendChild(li);
+
+  inputToDo.value = "";
+});
+
+clearBtn.addEventListener("click", function () {
+  ulElement.innerHTML = " ";
+});
+
+//2.burger bar
+let navigation = document.getElementById("list-item");
+let burgerbar = document.getElementById("burger-bar");
+let logobutton = document.getElementById("logo");
+let headerWraper = document.getElementById("wraper");
+
+burgerbar.addEventListener("click", function () {
+  navigation.classList.toggle("nav-active");
+  logobutton.classList.toggle("active-logo");
+  headerWraper.classList.toggle("wraper-active");
+  burgerbar.classList.toggle("active");
 });
