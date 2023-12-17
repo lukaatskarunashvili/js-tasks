@@ -32,6 +32,7 @@ ul {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    transition: all 0.7s;
   
   }
   .circle1{
@@ -92,18 +93,18 @@ ul {
   .burger.active .circle1{
    top: 50%;
    transform: translate(-50%,-50% ) rotate(45deg);
-   transition: all 0.5s ease;
+   
   }
   .burger.active .circle2{
     display: none;
     
-    transition: all 0.5s ease;
+    
 
   }
   .burger.active .circle3{
     top: 50%;
    transform: translate(-50%,-50% ) rotate(-45deg);
-   transition: all 0.5s ease;
+   
     
 
   }
