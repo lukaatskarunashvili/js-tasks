@@ -293,93 +293,119 @@
 // console.log(array6);
 //  ------------------------------------------------task5-------------------------------------------------
 
-//1
-let num = "12345";
-let array3New = num.split("");
-let sum2 = 0;
-array3New.forEach(function (item) {
-  sum2 += item;
-});
-console.log(sum2);
-//2
+// //1
+// let num = "12345";
+// let array3New = num.split("");
+// let sum2 = 0;
+// array3New.forEach(function (item) {
+//   sum2 += item;
+// });
+// console.log(sum2);
+// //2
 
-/* <div class=“wraper”>
- <img src=“რაღაცა სურათის მისამართი დაამატეთ” alt=“image”>
-<h2 class=“title”> image title </h2>
-</div>
-h2 ჯს დან დაუმატეთ წითელი ფონტის ფერი და ფროტის ზომა 30px */
-let newdivelement = document.createElement("div");
-let newimgelement = document.createElement("img");
-let newHelement = document.createElement("h2");
-newdivelement.classList.add("wraper");
-newimgelement.setAttribute(
-  "src",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgcZ_QaAYqL2b6FfEE1st9Pkr2D5fwTqzzg&usqp=CAU"
-);
+// /* <div class=“wraper”>
+//  <img src=“რაღაცა სურათის მისამართი დაამატეთ” alt=“image”>
+// <h2 class=“title”> image title </h2>
+// </div>
+// h2 ჯს დან დაუმატეთ წითელი ფონტის ფერი და ფროტის ზომა 30px */
+// let newdivelement = document.createElement("div");
+// let newimgelement = document.createElement("img");
+// let newHelement = document.createElement("h2");
+// newdivelement.classList.add("wraper");
+// newimgelement.setAttribute(
+//   "src",
+//   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgcZ_QaAYqL2b6FfEE1st9Pkr2D5fwTqzzg&usqp=CAU"
+// );
 
-newimgelement.setAttribute("alt", "image");
-newHelement.classList.add("title");
-newHelement.textContent = "image title";
-newHelement.style.color = "red";
-newHelement.style.fontSize = "30px";
-document.getElementById("div-wraper").appendChild(newdivelement);
-document.querySelector(".wraper").appendChild(newimgelement);
-document.querySelector(".wraper").appendChild(newHelement);
-//3
-//  შექმენით სამი დივი htmlში, მიანიჭეთ ერთიდაიგივე კლასის სახელი და ყველა დივში დაამატეთ ჯს-დან შემდეგი კოდი:
-// <p class=“text”> hello </p>
-document.querySelectorAll(".div-element").forEach((item) => {
-  let newPelement = document.createElement("P");
-  newPelement.classList.add("text");
-  newPelement.textContent = "hello";
+// newimgelement.setAttribute("alt", "image");
+// newHelement.classList.add("title");
+// newHelement.textContent = "image title";
+// newHelement.style.color = "red";
+// newHelement.style.fontSize = "30px";
+// document.getElementById("div-wraper").appendChild(newdivelement);
+// document.querySelector(".wraper").appendChild(newimgelement);
+// document.querySelector(".wraper").appendChild(newHelement);
+// //3
+// //  შექმენით სამი დივი htmlში, მიანიჭეთ ერთიდაიგივე კლასის სახელი და ყველა დივში დაამატეთ ჯს-დან შემდეგი კოდი:
+// // <p class=“text”> hello </p>
+// document.querySelectorAll(".div-element").forEach((item) => {
+//   let newPelement = document.createElement("P");
+//   newPelement.classList.add("text");
+//   newPelement.textContent = "hello";
 
-  item.appendChild(newPelement);
-});
-// ------------------------------------------------------------task6--------------------------------------------------------------------------------
+//   item.appendChild(newPelement);
+// });
+// // ------------------------------------------------------------task6--------------------------------------------------------------------------------
+// //1.
+// let inputToDo = document.getElementById("textInfo");
+// let addBtn = document.getElementById("add-btn-input");
+// let ulElement = document.getElementById("ul-items");
+// let clearBtn = document.getElementById("clearAll");
+// let formElement = document.getElementById("formElement");
+
+// formElement.addEventListener("submit", function (e) {
+//   e.preventDefault();
+
+//   let valueInput = inputToDo.value;
+//   if (valueInput == "") {
+//     return;
+//   }
+
+//   let li = document.createElement("li");
+//   li.textContent = valueInput;
+
+//   let iconDelete = document.createElement("i");
+//   iconDelete.classList.add("fa-solid", "fa-trash");
+
+//   iconDelete.addEventListener("click", function () {
+//     li.remove();
+//   });
+
+//   li.appendChild(iconDelete);
+//   ulElement.appendChild(li);
+
+//   inputToDo.value = "";
+// });
+
+// clearBtn.addEventListener("click", function () {
+//   ulElement.innerHTML = " ";
+// });
+
+// //2.burger bar
+// let navigation = document.getElementById("list-item");
+// let burgerbar = document.getElementById("burger-bar");
+// let logobutton = document.getElementById("logo");
+// let headerWraper = document.getElementById("wraper");
+
+// burgerbar.addEventListener("click", function () {
+//   navigation.classList.toggle("nav-active");
+//   logobutton.classList.toggle("active-logo");
+//   headerWraper.classList.toggle("wraper-active");
+//   burgerbar.classList.toggle("active");
+// });
+//--------------------------------------------------------------task7----------------------------------------------------------------------------
+
 //1.
-let inputToDo = document.getElementById("textInfo");
-let addBtn = document.getElementById("add-btn-input");
-let ulElement = document.getElementById("ul-items");
-let clearBtn = document.getElementById("clearAll");
-let formElement = document.getElementById("formElement");
+let requist = new XMLHttpRequest();
 
-formElement.addEventListener("submit", function (e) {
-  e.preventDefault();
+requist.addEventListener("load", function () {
+  let mosuliInfoText = this.responseText;
+  let mosuliInfoRogrocJs = JSON.parse(mosuliInfoText);
+  let ul = document.createElement("ul");
+  mosuliInfoRogrocJs.data.forEach((item) => {
+    let span = document.createElement("span");
+    span.classList.add("span-names");
+    span.innerText = `${item.first_name} ${item.last_name} ${item.email} `;
 
-  let valueInput = inputToDo.value;
-  if (valueInput == "") {
-    return;
-  }
-
-  let li = document.createElement("li");
-  li.textContent = valueInput;
-
-  let iconDelete = document.createElement("i");
-  iconDelete.classList.add("fa-solid", "fa-trash");
-
-  iconDelete.addEventListener("click", function () {
-    li.remove();
+    let li = document.createElement("li").appendChild(span);
+    ul.appendChild(li);
   });
-
-  li.appendChild(iconDelete);
-  ulElement.appendChild(li);
-
-  inputToDo.value = "";
+  document.getElementById("list").appendChild(ul);
 });
-
-clearBtn.addEventListener("click", function () {
-  ulElement.innerHTML = " ";
+requist.addEventListener("error", function () {
+  let p = document.createElement("p");
+  p.textContent = "Server Error";
+  document.getElementById("list").appendChild(p);
 });
-
-//2.burger bar
-let navigation = document.getElementById("list-item");
-let burgerbar = document.getElementById("burger-bar");
-let logobutton = document.getElementById("logo");
-let headerWraper = document.getElementById("wraper");
-
-burgerbar.addEventListener("click", function () {
-  navigation.classList.toggle("nav-active");
-  logobutton.classList.toggle("active-logo");
-  headerWraper.classList.toggle("wraper-active");
-  burgerbar.classList.toggle("active");
-});
+requist.open("GET", "https://reqres.in/api/users?page=2");
+requist.send();

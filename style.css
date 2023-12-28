@@ -108,6 +108,10 @@ ul {
     
 
   }
+  .span-names{
+
+    display: block;
+  }
 
   @media all and (min-width:700px ){
     .ul-list{
